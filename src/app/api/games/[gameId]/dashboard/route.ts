@@ -1,5 +1,6 @@
 // API Route: Response Status Dashboard
 // Feature: 006-results-dashboard, User Story 1
+// Feature: 007-game-closure, User Story 3 (added closed game support)
 // Returns real-time response submission status (publicly accessible)
 
 import { NextResponse } from 'next/server';
@@ -51,7 +52,7 @@ export async function GET(
         return NextResponse.json(
           {
             error: 'Game not accepting responses',
-            details: "Dashboard only available when game status is '出題中'",
+            details: "Dashboard only available when game status is '出題中' or '締切'",
           },
           { status: 400 }
         );
